@@ -1,49 +1,82 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
-var app = {
-    // Application Constructor
-    initialize: function() {
-        this.bindEvents();
-    },
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicity call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-        app.receivedEvent('deviceready');
-    },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
+$(document).ready(function() {
+//Zmienne
+var animation = false;
+var className = $(document.documentElement).attr('class');
+$currentId = "";
+$prevId = "";
+var hrefPage = ("content.html #start");
+$animDir = 1;
+var title = "Feta"
+$('#topbar').text(title);
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
+var hrefScipt = "";
+$("#content1").load(hrefPage);
+$("#content2").load("content.html #start");
+//Test na wsparcie 3D
+  if (className.toLowerCase().indexOf("jest3d") >= 0) {
+		$(".guzik").addClass("anim");}
+		else {$(".guzik").addClass("nonanim");}
+		
+// Wczytywanie stron (z 3D)
+$(".anim").click(function(){
+	$currentId = $(this).attr('id');
+	hrefPage = ("content.html #" + $(this).data('href'));
+	hrefScipt = ("js/" + $(this).data('href') + ".js");
+	guzik = $(this);
 
-        console.log('Received Event: ' + id);
-    }
-};
+	  if ($currentId == $prevId) {} 
+	else {
+	  if ($animDir == 1) {
+	  	var title = $(this).text();
+		$('#topbar').text(title);
+		$prevId = $(this).attr('id');
+		$("#content2").load(hrefPage, function(){
+		 $("#content1").anim({translate3d: '100%,0,0'}, 0.3, 'ease-in', function(){
+		  $("#content1").empty();
+		  $("#content1").css('z-index', 0);
+		  $("#content2").css('z-index', 1);
+		   $("#content1").anim({translate3d: '0,0,0'}, 0, 'none', function(){
+		   	$('#topbar').text(title);
+		   $.getScript(hrefScipt);
+		   $animDir = 0;
+		   });
+		 });
+		});}
+
+	  else{	
+	  	var title = $(this).text();
+		 $('#topbar').text(title);
+		$prevId = $(this).attr('id');
+		$("#content1").load(hrefPage, function(){
+		  $("#content2").anim({translate3d: '-100%,0,0'}, 0.3, 'ease-in', function(){
+		   $("#content2").empty();
+		   $("#content2").css('z-index', 0);
+		   $("#content1").css('z-index', 1);
+		   $("#content2").anim({translate3d: '0,0,0'}, 0, 'none', function(){
+		   	$('#topbar').text(title);
+		   	$.getScript(hrefScipt);
+		   $animDir = 1;
+		   });
+		});
+	  });}
+				
+	}
+});
+// Wczytywanie stron (bez 3D)
+$(".nonanim").click(function(){
+	var title = $(this).text();
+	
+	$currentId = $(this).attr('id');
+	hrefPage = ("content.html #" + $(this).data('href'));
+	guzik = $(this);
+	  if ($currentId == $prevId) {} 
+	  else {
+	  	$('#topbar').text(title);
+		prevId = $(this).attr('id');
+		$("#content1").load(href);
+	  }
+})
+
+// Koniec
+});
+
