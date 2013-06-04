@@ -25,16 +25,10 @@
     }
     @font-face {
     font-family: HelveticaNeueBold;
-    src: url("/../fonts/HelveticaNeueCondensedBlack.ttf"); /* TTF file for CSS3 browsers */
+    src: url("fonts/HelveticaNeueCondensedBlack.ttf"); /* TTF file for CSS3 browsers */
     }
 
-    #wrap {
-        position: relative;
-        overflow: hidden;
-        width: 1024px;
-        height: 768px;
 
-    }
     #canvmapa {
         height: 100%;
         width: 100%;
@@ -58,7 +52,7 @@
     top:0px;
     left:0px;
     position:absolute;
-    background-image: url("/img/tab_top.png");
+    background-image: url("img/tab_top.png");
     background-repeat:repeat-x;
     }
     .content
@@ -114,7 +108,7 @@
     bottom:0px;
     left:0px;
     position:absolute;
-    background-image: url("/img/tab_bar.png");
+    background-image: url("img/tab_bar.png");
     background-repeat:repeat-x;
     }
 
