@@ -12,5 +12,15 @@
 </div>
 
 <div id="program" class="content">
-<img src="img/3.jpg">
+  <body onload="app.bodyLoad()"> <!-- CALL TO OUR JS TO LET IT KNOW THE APP IS LOADED -->
+  		<div id="header"></div>
+  		<div id="loginArea"> <!-- If we don't have a user we will show this -->
+			<div id="login" class="btn">Login</div>
+        </div>
+        <div id="status"> <!-- if we do have a user we will show this -->
+        <div id='statusHold' style='text-align:center; width:100%;'><img src='images/loader.gif' id="info"/></div>
+        	<textarea id="statusTXT"></textarea>
+            <div id="statusBTN" class="btn">share</div>
+        </div>
+  </body>
 </div>
