@@ -58,7 +58,7 @@
     top:0px;
     left:0px;
     position:absolute;
-    background-image: url("/../img/tab_top.png");
+    background-image: url("/img/tab_top.png");
     background-repeat:repeat-x;
     }
     .content
@@ -114,7 +114,7 @@
     bottom:0px;
     left:0px;
     position:absolute;
-    background-image: url("/../img/tab_bar.png");
+    background-image: url("/img/tab_bar.png");
     background-repeat:repeat-x;
     }
 

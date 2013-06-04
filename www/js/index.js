@@ -6,7 +6,7 @@ $currentId = "";
 $prevId = "";
 var hrefPage = ("content.html #start");
 $animDir = 1;
-var title = "Feta"
+var title = "O fecie"
 $('#topbar').text(title);
 
 var hrefScipt = "";
