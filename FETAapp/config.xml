@@ -58,6 +58,11 @@
         <plugin name="Globalization" value="CDVGlobalization" />
         <plugin name="InAppBrowser" value="CDVInAppBrowser" />
         <plugin name="org.apache.cordova.facebook.Connect" value="FacebookConnectPlugin" />
+=======
+        <gap:plugin name="FacebookConnect">
+        <param name="APP_ID" value="483274565074094" />
+ </gap:plugin>
+>>>>>>> 603f24a524a8d866766de2c043ad0af0cf39bdc1
     </plugins>
 
     <access origin="*" />
