@@ -1,9 +1,20 @@
-html{width: 100%; height: 100%; padding: 0; margin: 0;}
-* {
-    -webkit-tap-highlight-color:rgba(0,0,0,0);
-}
 
+	/* Non-Retina */
+    @media screen and (-webkit-max-device-pixel-ratio: 1) {
+	
+    }    
+
+    /* Retina */
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+    only screen and (-o-min-device-pixel-ratio: 3/2),
+    only screen and (min--moz-device-pixel-ratio: 1.5),
+    only screen and (min-device-pixel-ratio: 1.5) {
+        
+    html{width: 100%; height: 100%; padding: 0; margin: 0;}
     body{
+
+    
+    font-weight: 300;
     padding: 0; margin: 0;
     height:100%;
     min-height: 100%;
@@ -14,10 +25,16 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
     }
     @font-face {
     font-family: HelveticaNeueBold;
-    src: url("fonts/HelveticaNeueCondensedBlack.ttf"); /* TTF file for CSS3 browsers */
+    src: url("/../fonts/HelveticaNeueCondensedBlack.ttf"); /* TTF file for CSS3 browsers */
     }
 
+    #wrap {
+        position: relative;
+        overflow: hidden;
+        width: 1024px;
+        height: 768px;
 
+    }
     #canvmapa {
         height: 100%;
         width: 100%;
@@ -36,11 +53,12 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
     text-align: center;
     box-shadow: 0 7px 6px -6px black;
     padding: 0; margin: 0;
+    height:49px;
     width:100%;
     top:0px;
     left:0px;
     position:absolute;
-    background-image: url("img/tab_top.png");
+    background-image: url("/../img/tab_top.png");
     background-repeat:repeat-x;
     }
     .content
@@ -48,27 +66,25 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
         z-index: -1;
         width: 100%;
         height:100%;
+        background-color: #181411;
         color: white;
     }
-    .clicked 
-    {
-                 -webkit-filter: invert(100%); 
-    }
+
     #content1 
     { 
-
-
     position: absolute;   
     z-index: 1;
     text-align: center;
     margin: 0;
-    background: transparent;
+    background: white;
     overflow: hidden;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     height:100%;
     width: 100%;
+    padding-top: 49px;
+    padding-bottom: 49px;
     }
     #content2
     { 
@@ -76,14 +92,15 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
     z-index: 0;
     text-align: center;
     margin: 0;
-    background: transparent;
+    background: white;
     overflow: hidden;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     height:100%;
     width: 100%;
-
+    padding-top: 49px;
+    padding-bottom: 49px;
     }
 
     #botbar 
@@ -92,11 +109,12 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
     text-align: center;
     box-shadow: 0px -7px 7px -7px black;
     padding: 0; margin: 0;
+    height:49px;
     width:100%;
     bottom:0px;
     left:0px;
     position:absolute;
-    background-image: url("img/tab_bar.png");
+    background-image: url("/../img/tab_bar.png");
     background-repeat:repeat-x;
     }
 
@@ -108,81 +126,33 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
     border-bottom-right-radius: 4px 4px;
     border-top-right-radius: 4px 4px;
     border-bottom-left-radius: 4px 4px;
+    border-style:groove;
+    border-top:none;
+    border-bottom:none;
+    border-left: thin solid #fff4d3;
+    border-right: thin solid #fff4d3;
     margin-left: auto;   
     margin-right: auto;
     text-align: center;
     height: 49px;
-    width: 120px;
-    background-color: black;
+    width: 65px;
+    background-color: white;
     color: white;
     /*font-weight: 100;*/
     font-family:'HelveticaNeueBold', georgia, serif;
     font-size: 13px;
-    color: #d1d1d1;
+    color: black;
 
     }
 
-       
-
-
-    /* Non-Retina */
-    @media screen and (-webkit-max-device-pixel-ratio: 1) {
-        .content {
-    background-color: gray;
-}
-    #content1{
-        padding-top: 49px;
-        padding-bottom: 49px;   
-    }
-    #content2{
-        padding-top: 49px;
-        padding-bottom: 49px;   
-    }
-    #botbar {
-        height:49px;
-    }
-    #topbar{
-        height: 49px;
-    }
-        .ikona {
+    .ikona {
         width: 30px;
         height: 30px;
     }
- 
-    
-    }    
-
-    /* Retina */
-    @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-    only screen and (-o-min-device-pixel-ratio: 3/2),
-    only screen and (min--moz-device-pixel-ratio: 1.5),
-    only screen and (min-device-pixel-ratio: 1.5) {
-    .content {
-        background-color: gray;
-    }    
-    #content1
-    {
-        padding-top: 49px;
-        padding-bottom: 49px;   
-    }
-    #content2{
-        padding-top: 49px;
-        padding-bottom: 49px;   
-    }
-    #botbar {
-        height:49px;
-    }
-    #topbar{
-        height: 49px;
-    }
-        .ikona {
-        width: 30px;
-        height: 30px;
-    }
- 
+        
 
     }
-    
+
     /* iPad Portrait */
     @media screen and (orientation:portrait) {
 

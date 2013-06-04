@@ -6,7 +6,7 @@ $currentId = "";
 $prevId = "";
 var hrefPage = ("content.html #start");
 $animDir = 1;
-var title = "O fecie"
+var title = "FETA"
 $('#topbar').text(title);
 
 var hrefScipt = "";
@@ -30,8 +30,12 @@ $(".anim").click(function(){
 	  	var title = $(this).text();
 		$('#topbar').text(title);
 		$prevId = $(this).attr('id');
+		$(".guzik").css("background", "black");
+		$(this).css("background", "#3D4450");
+		$(".guzik").removeClass("clicked");
+		$(this).addClass("clicked");
 		$("#content2").load(hrefPage, function(){
-		 $("#content1").anim({translate3d: '100%,0,0'}, 0.3, 'ease-in', function(){
+		 $("#content1").anim({translate3d: '0,100%,0'}, 0.3, 'ease-in', function(){
 		  $("#content1").empty();
 		  $("#content1").css('z-index', 0);
 		  $("#content2").css('z-index', 1);
@@ -47,8 +51,13 @@ $(".anim").click(function(){
 	  	var title = $(this).text();
 		 $('#topbar').text(title);
 		$prevId = $(this).attr('id');
+		$prevId = $(this).attr('id');
+		$(".guzik").css("background", "black");
+		$(this).css("background", "#3D4450");
+		$(".guzik").removeClass("clicked");
+		$(this).addClass("clicked");
 		$("#content1").load(hrefPage, function(){
-		  $("#content2").anim({translate3d: '-100%,0,0'}, 0.3, 'ease-in', function(){
+		  $("#content2").anim({translate3d: '0,100%,0'}, 0.3, 'ease-in', function(){
 		   $("#content2").empty();
 		   $("#content2").css('z-index', 0);
 		   $("#content1").css('z-index', 1);
