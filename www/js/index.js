@@ -15,7 +15,7 @@ $("#content2").load("content.html #start");
 //Test na wsparcie 3D
   if (className.toLowerCase().indexOf("jest3d") >= 0) {
 		$(".guzik").addClass("anim");}
-		else {$(".guzik").addClass("nonanim");}
+		else {$(".guzik").addClass("anim");}
 		
 // Wczytywanie stron (z 3D)
 $(".anim").click(function(){
