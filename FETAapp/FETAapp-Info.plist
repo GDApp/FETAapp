@@ -38,18 +38,6 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-		    <key>CFBundleTypeRole</key>
-            <string>None</string>
-			<key>CFBundleURLName</key>
-			<string>EKLMP84J6J.com.feta</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>fb483274565074094</string>
-			</array>
-		</dict>
-	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>LSApplicationCategoryType</key>
