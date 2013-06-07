@@ -1,7 +1,7 @@
 html{width: 100%; height: 100%; padding: 0; margin: 0;}
-* {
+*  {
     -webkit-tap-highlight-color:rgba(0,0,0,0);
-}
+    }
 
     body{
     padding: 0; margin: 0;
@@ -11,14 +11,17 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
     position:relative;
     overflow: hidden;
     -webkit-backface-visibility: hidden;
+    background-color: #d7cec1;
     }
+
     @font-face {
     font-family: HelveticaNeueBold;
     src: url("fonts/HelveticaNeueCondensedBlack.ttf"); /* TTF file for CSS3 browsers */
     }
 
 
-    #canvmapa {
+    #canvmapa 
+    {
         height: 100%;
         width: 100%;
     }
@@ -30,7 +33,8 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
     text-shadow: 0px 0px 1.5px #292929;
     color: #292929;
     /*font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; */
-    font-family: HelveticaNeueBold;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    /*font-family:'HelveticaNeueBold', georgia, serif;*/
     font-weight: 300;
     font-size: 200%;
     text-align: center;
@@ -40,27 +44,28 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
     top:0px;
     left:0px;
     position:absolute;
+    background-color: #343434; 
     background-image: url("img/tab_top.png");
     background-repeat:repeat-x;
     }
+
     .content
     {
         z-index: -1;
         width: 100%;
         height:100%;
-        color: white;
+        color: #d7cec1;
     }
+
     .clicked 
     {
-                 -webkit-filter: invert(100%); 
-                 box-shadow:         inset 0 0 6px white;
+    -webkit-filter: invert(100%); 
+    box-shadow:inset 0 0 6px white;
     }
-    #content1 
+
+    #content1 , #content2
     { 
-
-
     position: absolute;   
-    z-index: 1;
     text-align: center;
     margin: 0;
     background: transparent;
@@ -71,25 +76,20 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
     height:100%;
     width: 100%;
     }
+
     #content2
     { 
-    position: absolute;
     z-index: 0;
-    text-align: center;
-    margin: 0;
-    background: transparent;
-    overflow: hidden;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    height:100%;
-    width: 100%;
-
+    }
+    #content1
+    { 
+    z-index: 1;
     }
 
     #botbar 
     {
     z-index: 2;
+    position: absolute;
     text-align: center;
     box-shadow: 0px -7px 7px -7px black;
     padding: 0; margin: 0;
@@ -104,47 +104,147 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
 
     .guzik 
     {
-        margin-top: 3px;
+    position: relative;
+    margin-top: 3px;
     line-height: 10px;
     display:inline-block;
-    border-top-left-radius: 4px 4px;
-    border-bottom-right-radius: 4px 4px;
-    border-top-right-radius: 4px 4px;
-    border-bottom-left-radius: 4px 4px;
+    border-top-left-radius: 0px 0px;
+    border-bottom-right-radius: 0px 0px;
+    border-top-right-radius: 0px 0px;
+    border-bottom-left-radius: 0px 0px;
     margin-left: auto;   
     margin-right: auto;
     text-align: center;
     height: 45px;
-    width: 120px;
+    width: 180px;
     background-color: black;
     color: white;
     /*font-weight: 100;*/
-    font-family:'HelveticaNeueBold', georgia, serif;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    /*font-family:'HelveticaNeueBold', georgia, serif;*/
     font-size: 13px;
     color: #d1d1d1;
+    }
+
+    #start 
+    {
+        height: 100%;
+        width: 100%;
+        background-color: #d7cec1;
+        background-repeat:no-repeat;
+        background-position: center center;
+        background-image: url('logo.png');
+    }
+
+    #tabele
+    {
+    overflow: scroll;
+    overflow: hidden;
+    margin-left: auto;   
+    margin-right: auto;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 45px;
+    }
+
+    .tabela
+    {
+    overflow: scroll;
+    margin-left: auto;   
+    margin-right: auto;
+    text-align: center;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 100%;
+    height: 30px;
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    }
+    .tabela th
+    {
+    background: #ece6dc;
+    color: #343434;
+    text-align: left;
+    font-size: 100%;
+    font-weight: thick;
+    padding: 15px;
+    border-bottom: 0px;
+    }
+    .tabela td
+    {
+    background-color: #343434;
+    color: #ece6dc;
+    text-align: left;
+    padding: 0px;
+ 
+    border-bottom: 1px solid #fff;
+  
+    border-top: 1px solid transparent;
+
+    }
+    .tabela tr:hover td
+    {
+    background: #646464;
+    color: #ece6dc;
+    }
+    
+    h1{
+    font-weight: thick;
+    font-size: 110%;
+    text-align: center;
+    }
+        #tabela
+    {
+
+        height: 100%;
+        width: 100%;
+        -webkit-transform: translate3d(0, 0, 0);
+        -webkit-overflow-scrolling: touch;
 
     }
 
-       
+    #dzien
+    {
+        background-color: #343434;
+        color: #ece6dc;
+        height: 40px;
+        vertical-align: bottom;
+        text-align: center;
+        line-height: 12px;
+        font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+        font-size: 100%;
+    }
 
+    span{
+        padding-left: 40px;
+    }
+    .wybranyDzien {
+        text-shadow: 0px 0px 8px white;
+        color: white;
+    }
 
     /* Non-Retina */
     @media screen and (-webkit-max-device-pixel-ratio: 1) {
-        .content {
-    background-color: gray;
-}
-    #content1{
+    .content 
+    {
+    background-color: #d7cec1;
+    }
+    #content1
+    {
         padding-top: 49px;
         padding-bottom: 49px;   
     }
-    #content2{
+    #content2
+    {
         padding-top: 49px;
         padding-bottom: 49px;   
     }
-    #botbar {
+    #botbar 
+    {
         height:49px;
     }
-    #topbar{
+    #topbar
+    {
         height: 49px;
     }
         .ikona {
@@ -161,7 +261,7 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
     only screen and (min--moz-device-pixel-ratio: 1.5),
     only screen and (min-device-pixel-ratio: 1.5) {
     .content {
-        background-color: gray;
+     background-color: #d7cec1;
     }    
     #content1
     {
@@ -172,16 +272,22 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
         padding-top: 49px;
         padding-bottom: 49px;   
     }
-    #botbar {
+    #botbar 
+    {
         height:49px;
     }
-    #topbar{
+    #topbar
+    {
         height: 49px;
     }
-        .ikona {
+    .ikona 
+    {
         width: 30px;
         height: 30px;
     }
+
+
+
  
 
     }

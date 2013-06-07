@@ -4,80 +4,63 @@ var animation = false;
 var className = $(document.documentElement).attr('class');
 $currentId = "";
 $prevId = "";
-var hrefPage = ("content.html #start");
+var hrefPage = ("start.html");
 $animDir = 1;
-var title = "FETA"
-$('#topbar').text(title);
+var front = "";
+var back = "";
+var title = ""
 
 var hrefScipt = "";
 $("#content1").load(hrefPage);
-$("#content2").load("content.html #start");
 //Test na wsparcie 3D
   if (className.toLowerCase().indexOf("jest3d") >= 0) {
 		$(".guzik").addClass("anim");}
 		else {$(".guzik").addClass("anim");}
+
+
 		
 // Wczytywanie stron (z 3D)
 $(".anim").click(function(){
+	$('#topbar').text($(this).data('tyt'));
 	$currentId = $(this).attr('id');
-	hrefPage = ("content.html #" + $(this).data('href'));
-	hrefScipt = ("js/" + $(this).data('href') + ".js");
-	guzik = $(this);
+	hrefPage = ($(this).data('href'));
+	hrefScipt = ("js/" + $(this).data('js'));
+	front = $(".front");
+	back = $(".back");
+	
 
-	  if ($currentId == $prevId) {} 
+	if ($currentId == $prevId) {} 
 	else {
-	  if ($animDir == 1) {
-	  	var title = $(this).text();
-		$('#topbar').text(title);
 		$prevId = $(this).attr('id');
 		$(".guzik").css("background", "black");
 		$(this).css("background", "#3D4450");
 		$(".guzik").removeClass("clicked");
+		
 		$(this).addClass("clicked");
-		$("#content2").load(hrefPage, function(){
-		 $("#content1").anim({translate3d: '0,100%,0'}, 0.3, 'ease-in', function(){
-		  $("#content1").empty();
-		  $("#content1").css('z-index', 0);
-		  $("#content2").css('z-index', 1);
-		   $("#content1").anim({translate3d: '0,0,0'}, 0, 'none', function(){
-		   	$('#topbar').text(title);
-		   $.getScript(hrefScipt);
-		   $animDir = 0;
-		   });
-		 });
-		});}
-
-	  else{	
-	  	var title = $(this).text();
-		 $('#topbar').text(title);
-		$prevId = $(this).attr('id');
-		$prevId = $(this).attr('id');
-		$(".guzik").css("background", "black");
-		$(this).css("background", "#3D4450");
-		$(".guzik").removeClass("clicked");
-		$(this).addClass("clicked");
-		$("#content1").load(hrefPage, function(){
-		  $("#content2").anim({translate3d: '0,100%,0'}, 0.3, 'ease-in', function(){
-		   $("#content2").empty();
-		   $("#content2").css('z-index', 0);
-		   $("#content1").css('z-index', 1);
-		   $("#content2").anim({translate3d: '0,0,0'}, 0, 'none', function(){
-		   	$('#topbar').text(title);
-		   	$.getScript(hrefScipt);
-		   $animDir = 1;
-		   });
+		$(back).load(hrefPage, function(){
+			$(front).anim({translate3d: '100%,0,0'}, 0.3, 'ease-in', function(){
+				$(front).empty();
+				$(front).css('z-index', 0);
+				$(back).css('z-index', 1);
+				$(front).anim({translate3d: '0,0,0'}, 0, 'none', function(){
+					$(front).removeClass("front");
+					$(front).addClass("back");
+					$(back).removeClass("back");
+					$(back).addClass("front");
+					$.getScript(hrefScipt);
+				});
+			});
 		});
-	  });}
-				
+
 	}
-});
+				
+	});
 // Wczytywanie stron (bez 3D)
 $(".nonanim").click(function(){
 	var title = $(this).text();
 	
 	$currentId = $(this).attr('id');
 	hrefPage = ("content.html #" + $(this).data('href'));
-	guzik = $(this);
 	  if ($currentId == $prevId) {} 
 	  else {
 	  	$('#topbar').text(title);
