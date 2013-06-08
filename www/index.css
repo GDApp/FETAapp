@@ -2,6 +2,12 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
 *  {
     -webkit-tap-highlight-color:rgba(0,0,0,0);
     }
+    /* Overthrow CSS:
+   Enable overflow: auto on elements with overthrow class when html element has overthrow class too */
+    .overthrow-enabled .overthrow {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
 
     body{
     padding: 0; margin: 0;
@@ -11,7 +17,7 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
     position:relative;
     overflow: hidden;
     -webkit-backface-visibility: hidden;
-    background-color: #d7cec1;
+    background-color: #ECE6DC;
     }
 
     @font-face {
@@ -69,12 +75,12 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
     text-align: center;
     margin: 0;
     background: transparent;
-    overflow: hidden;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     height:100%;
     width: 100%;
+    background-color: #ECE6DC;
     }
 
     #content2
@@ -116,7 +122,7 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
     margin-right: auto;
     text-align: center;
     height: 45px;
-    width: 180px;
+    width: 90px;
     background-color: black;
     color: white;
     /*font-weight: 100;*/
@@ -138,8 +144,7 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
 
     #tabele
     {
-    overflow: scroll;
-    overflow: hidden;
+
     margin-left: auto;   
     margin-right: auto;
     height: 100%;
@@ -149,7 +154,7 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
 
     .tabela
     {
-    overflow: scroll;
+
     margin-left: auto;   
     margin-right: auto;
     text-align: center;
@@ -185,9 +190,8 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
     .tabela tr:hover td
     {
     background: #646464;
-    color: #ece6dc;
     }
-    
+
     h1{
     font-weight: thick;
     font-size: 110%;
@@ -199,8 +203,6 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
         height: 100%;
         width: 100%;
         -webkit-transform: translate3d(0, 0, 0);
-        -webkit-overflow-scrolling: touch;
-
     }
 
     #dzien
@@ -213,6 +215,7 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
         line-height: 12px;
         font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
         font-size: 100%;
+
     }
 
     span{
@@ -247,13 +250,17 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
     {
         height: 49px;
     }
-        .ikona {
+    .ikona {
         width: 30px;
         height: 30px;
     }
  
-    
-    }    
+    .oteatrach{
+        height: 100%;
+        width: 100%;
+        background-color: gray;
+    }
+        
 
     /* Retina */
     @media only screen and (-webkit-min-device-pixel-ratio: 1.5),

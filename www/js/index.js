@@ -9,7 +9,6 @@ $animDir = 1;
 var front = "";
 var back = "";
 var title = ""
-
 var hrefScipt = "";
 $("#content1").load(hrefPage);
 //Test na wsparcie 3D
@@ -21,21 +20,19 @@ $("#content1").load(hrefPage);
 		
 // Wczytywanie stron (z 3D)
 $(".anim").click(function(){
+
 	$('#topbar').text($(this).data('tyt'));
 	$currentId = $(this).attr('id');
 	hrefPage = ($(this).data('href'));
 	hrefScipt = ("js/" + $(this).data('js'));
 	front = $(".front");
 	back = $(".back");
-	
-
 	if ($currentId == $prevId) {} 
 	else {
 		$prevId = $(this).attr('id');
 		$(".guzik").css("background", "black");
 		$(this).css("background", "#3D4450");
 		$(".guzik").removeClass("clicked");
-		
 		$(this).addClass("clicked");
 		$(back).load(hrefPage, function(){
 			$(front).anim({translate3d: '100%,0,0'}, 0.3, 'ease-in', function(){
