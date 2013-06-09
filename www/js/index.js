@@ -1,4 +1,7 @@
 $(document).ready(function() {
+window.addEventListener('load', function() {
+    FastClick.attach(document.body);
+}, false);
 //Zmienne
 var animation = false;
 var className = $(document.documentElement).attr('class');
