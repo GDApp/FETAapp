@@ -72,7 +72,8 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
     position: absolute;   
     text-align: center;
     margin: 0;
-    
+        overflow: auto;   
+
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -177,9 +178,7 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
     }
 */
     .tabela td
-    {
-    word-wrap:break-word;
-    
+    {    
     background-color: #343434;
     color: #ece6dc;
     padding: 0px;
