@@ -1,17 +1,24 @@
 var currentSC = "";
 var previousSC = "czwartek";
 var teatr = ""
-$("#tabela").load("repertuar/czwartek.html");
+//$("#tabela").load("repertuar/czwartek.html");
 //$("#tabela").fadeIn();
 $("#tabela").delegate("tr", "click", function() {
 	$("span").removeClass("wybranyDzien");
 	previousSC = "";
 	teatr = ("oteatrach.html "+ "#" + $(this).data('teatr'));
-	//$("#tabela").fadeOut(300, function(){
-		$("#tabela").load(teatr);//, function(){
-	//		$("#tabela").fadeIn(400);
-	//	});
-	//});
+	$("#tabela").fadeOut(300, function(){
+		$("#tabela").load(teatr, function(){
+			$("#tabela").fadeIn(400);
+		});
+	});
+});
+$("#tabela").delegate(".imgTeatry", "click", function() {
+	$('body').append("<div class='pic'><img src=" + $(this).attr("src") + " class=" + "'insidepic'" + "></div>");
+
+});
+	$("body").delegate(".pic", "click", function() {
+	$(".pic").remove();
 });
 
 $("span").click(function(){
@@ -23,12 +30,12 @@ $("span").click(function(){
 	$(dzien).addClass("wybranyDzien");
 	previousSC = $(this).attr('id');
 	$('#topbar').text($(this).data('kiedy'));
-	//$("#tabela").fadeOut(300, function(){
-	$("#tabela").load("repertuar/" + $(dzien).attr('id') + ".html");// function(){
-	//$("#tabela").fadeIn(600);
+	$("#tabela").fadeOut(300, function(){
+	$("#tabela").load("repertuar/" + $(dzien).attr('id') + ".html", function(){
+	$("#tabela").fadeIn(600);
 
-	//});
-	//});
+	});
+	});
 	}
 });
 

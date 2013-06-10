@@ -15,7 +15,7 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
     position: fixed;
     overflow: hidden;
     -webkit-backface-visibility: hidden;
-    background-color: transparent;
+
     }
 
     @font-face {
@@ -70,16 +70,15 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
     #content1 , #content2
     { 
     position: absolute;   
+        overflow: hidden;
     text-align: center;
-    margin: 0;
-        overflow: auto;   
-
+    background-image: url("table-images/pattern1.png"); 
+    margin:0;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     height:100%;
     width: 100%;
-    background-image: url("table-images/pattern1.png");
     }
 
     #content2
@@ -111,19 +110,19 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
     {
     position: relative;
     margin-top: 3px;
+    margin-bottom: 3px;
     line-height: 10px;
     display:inline-block;
-    border-top-left-radius: 0px 0px;
-    border-bottom-right-radius: 0px 0px;
-    border-top-right-radius: 0px 0px;
-    border-bottom-left-radius: 0px 0px;
+    border-top-left-radius: 3px 3px;
+    border-bottom-right-radius: 3px 3px;
+    border-top-right-radius: 3px 3px;
+    border-bottom-left-radius: 3px 3px;
     margin-left: auto;   
     margin-right: auto;
     text-align: center;
-    height: 45px;
-    width: 90px;
+    height: 46px;
+    width: 120px;
     background-color: black;
-    color: white;
     /*font-weight: 100;*/
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
     /*font-family:'HelveticaNeueBold', georgia, serif;*/
@@ -203,6 +202,8 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
     #tabela
     {
     height: 100%;
+        background-image: url("table-images/pattern1.png");
+
     width: 100%;
     -webkit-transform: translate3d(0, 0, 0);
     overflow: auto;   
@@ -230,40 +231,32 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
     text-shadow: 0px 0px 8px white;
     color: white;
     }
+    span{
+        padding-top: 20px;
+
+        padding-bottom: 20px;
+    }
 
 
 /*O WYDAZENIACH*/
     .oteatrach
     {
-    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-    color: white;
     height: 100%;
     width: 100%;
-    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+        overflow: hidden;
     }
-    .imgTeatry
-    {
-    height: 300px;
-    width: 300px;
-    margin-top: 20px;
 
-    margin-right: auto;
-    position: relative;
-    float:right;    
-    }
-    .textTeatry
-    {
-    float: left;
-    margin-left: auto;
-    }
     .tabelaTeatry
     {
 
     margin-top: 20px;
     margin-left: 20px;
     background-color: red;
-    width: 50px;
-    float:right;
+    width: 40px;
+
     border-color: 10px solid red;
     position: relative;
     text-align: left;
@@ -299,9 +292,27 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
     .oteatrach{
         height: 100%;
         width: 100%;
-        background-color: gray;
+    }
+    .pic
+    {
+    vertical-align: center;
+    position: fixed;
+    z-index: 3;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    }
+    .insidepic
+    {
+    width:600px;
+    height:400px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin:-200px 0 0 -300px;
     }
 
+    
 
     /* Non-Retina */
     @media screen and (-webkit-max-device-pixel-ratio: 1) {
@@ -313,16 +324,93 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
     only screen and (min--moz-device-pixel-ratio: 1.5),
     only screen and (min-device-pixel-ratio: 1.5) {
 
-
     }
     
     /* iPad Portrait */
     @media screen and (orientation:portrait) {
+    .leftpanel
+    {
+    box-shadow:inset 0px 1px 7px black;
+    position: absolute;
+    float: top;
+    width: 100%;
+    background-image: url('table-images/pattern2.png');
+    height: 200px;
+     overflow-x: auto;
+     overflow-y: hidden;;
+     white-space: nowrap;
+    }
+
+    .imgTeatry
+    {
+    height: 180px;
+    width: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    position: relative;
+    display:inline;
+    }
+
+    .textTeatry
+    {
+    justify-content: center;
+    overflow: hidden;
+    text-align: left;
+    margin-top: 220px;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 120%;
+    color: #d1d1d1;
+    }
 
     }
 
     /* iPad Landscape */
     @media screen and (orientation:landscape) {
+    .naprawiacz 
+    {
+        height: 800px;
+        width: 90px;
+        background-color: red;
+        display:inline;
+        position: relative;
+    }
+    .leftpanel
+    {
+    position: absolute;
+    box-shadow:inset 0px 1px 7px black;
+    float: left;
+    height: 100%;
+    margin-bottom: 49px;
+    background-image: url('table-images/pattern2.png');
+    width: 300px;
+     overflow-x: hidden;
+     overflow-y: auto;
+    }
+    .imgTeatry
+    {
+    height: 180px;
+    width: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    position: relative;
+
+    }
+    .textTeatry
+{
+    justify-content: center;
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 320px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    font-size: 120%;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    color: #d1d1d1;
+    }
 
 
     }

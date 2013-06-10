@@ -38,7 +38,7 @@ $(".anim").click(function(){
 		$(".guzik").removeClass("clicked");
 		$(this).addClass("clicked");
 		$(back).load(hrefPage, function(){
-			$(front).anim({translate3d: '100%,0,0'}, 0.3, 'ease-in', function(){
+			$(front).anim({translate3d: '100%,0,0'}, 0.5, 'ease-in', function(){
 				$(front).empty();
 				$(front).css('z-index', 0);
 				$(back).css('z-index', 1);
