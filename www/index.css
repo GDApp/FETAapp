@@ -328,6 +328,14 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
     
     /* iPad Portrait */
     @media screen and (orientation:portrait) {
+    .naprawiacz 
+    {
+        height: 0px;
+        width: 0px;
+        background-color: transparent;
+    display:inline;
+        position: relative;
+    }
     .leftpanel
     {
     box-shadow:inset 0px 1px 7px black;
@@ -373,7 +381,7 @@ html{width: 100%; height: 100%; padding: 0; margin: 0;}
     {
         height: 800px;
         width: 90px;
-        background-color: red;
+        background-color: transparent;
         display:inline;
         position: relative;
     }
