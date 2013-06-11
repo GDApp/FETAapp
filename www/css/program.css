@@ -1,0 +1,204 @@
+#tabele
+{
+    margin-left: auto;   
+    margin-right: auto;
+    height: 100%;
+    width: 100%;
+}
+.tabela
+{
+    margin-left: auto;   
+    margin-right: auto;
+    text-align: center;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 100%;
+    height: 30px;
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+.tabela td
+{    
+    background-color: #343434;
+    color: #ece6dc;
+    padding: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff;
+}
+
+.tabela tr:active td
+{
+    background: #646464;
+}
+
+h1
+{
+    font-weight: thick;
+    font-size: 110%;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 15px;
+}
+
+#tabela
+{
+    height: 100%;
+    background-image: url("../img/pattern1.png");
+    -webkit-overflow-scrolling: touch;
+    width: 100%; 
+    overflow: auto;   
+}
+
+#dzien
+{
+    box-shadow:inset 0px 1px 7px black;
+    background-image: url('../img/pattern2.png');
+    background-color: transparent;/* #343434; */
+    color: #ece6dc;
+    height: 45px;
+    position: relative;
+    text-align: center;
+    line-height: 13px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 100%;
+}
+
+.menuProgram
+{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.wybranyDzien 
+{
+    text-shadow: 0px 0px 8px white;
+    color: white;
+}
+
+.oteatrach
+{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    overflow: hidden;
+}
+
+.tabelaTeatry
+{
+    margin-top: 20px;
+    margin-left: 20px;
+    background-color: red;
+    width: 40px;
+    border-color: 10px solid red;
+    position: relative;
+    text-align: left;
+}
+
+.pic
+{
+    vertical-align: center;
+    position: fixed;
+    z-index: 3;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.insidepic
+{
+    width:600px;
+    height:400px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin:-200px 0 0 -300px;
+}
+
+.leftpanel
+{
+    position: absolute;
+    box-shadow:inset 0px 1px 7px black;
+    margin-bottom: 49px;
+    background-image: url('../img/pattern2.png');
+    -webkit-overflow-scrolling: touch;
+}
+
+/* iPad Portrait */
+@media screen and (orientation:portrait) {
+
+.leftpanel
+{
+    float: top;
+    width: 100%;
+    height: 200px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.imgTeatry
+{
+    height: 180px;
+    width: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    position: relative;
+    display:inline;
+}
+
+.textTeatry
+{
+    justify-content: center;
+    overflow: hidden;
+    text-align: left;
+    margin-top: 220px;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 120%;
+    color: #d1d1d1;
+}
+}
+
+/* iPad Landscape */
+@media screen and (orientation:landscape) {
+
+.leftpanel
+{
+    float: left;
+    height: 100%;
+    width: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.imgTeatry
+{
+    height: 180px;
+    width: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    position: relative;
+}
+
+.textTeatry
+{
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    justify-content: center;
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 320px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    font-size: 120%;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    color: #d1d1d1;
+}
+}

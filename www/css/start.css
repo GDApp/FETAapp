@@ -1,0 +1,9 @@
+#start 
+{
+    height: 100%;
+    width: 100%;
+    background-color: #d7cec1;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('../img/logo.png');
+}
