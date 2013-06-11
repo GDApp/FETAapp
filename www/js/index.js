@@ -1,40 +1,26 @@
 $(document).ready(function() {
-window.addEventListener('load', function() {
-    FastClick.attach(document.body);
-}, false);
-//Zmienne
-var animation = false;
+	window.addEventListener('load', function() {
+    	FastClick.attach(document.body);
+	}, false);
 var className = $(document.documentElement).attr('class');
-$currentId = "";
-$prevId = "";
-var hrefPage = ("start.html");
-$animDir = 1;
+var currentId = "";
+var prevId = "Sta";
+var hrefPage = ("res/data/start.html");
 var front = "";
 var back = "";
 var title = ""
 var hrefScipt = "";
-$("#content1").load(hrefPage);
-//Test na wsparcie 3D
-  if (className.toLowerCase().indexOf("jest3d") >= 0) {
-		$(".guzik").addClass("anim");}
-		else {$(".guzik").addClass("anim");}
-
-
-		
-// Wczytywanie stron (z 3D)
-$(".anim").click(function(){
-
+$(".front").load(hrefPage);		
+$(".guzik").click(function(){
 	$('#topbar').text($(this).data('tyt'));
-	$currentId = $(this).attr('id');
-	hrefPage = ($(this).data('href'));
+	currentId = $(this).attr('id');
+	hrefPage = ("res/data/" + $(this).data('href'));
 	hrefScipt = ("js/" + $(this).data('js'));
 	front = $(".front");
 	back = $(".back");
-	if ($currentId == $prevId) {} 
+	if (currentId == prevId) {} 
 	else {
-		$prevId = $(this).attr('id');
-		$(".guzik").css("background", "black");
-		$(this).css("background", "#3D4450");
+		prevId = $(this).attr('id');
 		$(".guzik").removeClass("clicked");
 		$(this).addClass("clicked");
 		$(back).load(hrefPage, function(){
@@ -51,24 +37,7 @@ $(".anim").click(function(){
 				});
 			});
 		});
-
-	}
-				
-	});
-// Wczytywanie stron (bez 3D)
-$(".nonanim").click(function(){
-	var title = $(this).text();
-	
-	$currentId = $(this).attr('id');
-	hrefPage = ("content.html #" + $(this).data('href'));
-	  if ($currentId == $prevId) {} 
-	  else {
-	  	$('#topbar').text(title);
-		prevId = $(this).attr('id');
-		$("#content1").load(href);
-	  }
-})
-
-// Koniec
+	}				
+});
 });
 

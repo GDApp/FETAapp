@@ -1,4 +1,4 @@
 $("#onMap").click(function(){
 	$(".front").empty();
-	$('<iframe id="canvmapa" src="mapa.html">').appendTo('.front');
+	$('<iframe id="canvmapa" src="res/data/mapa.html">').appendTo('.front');
 });
